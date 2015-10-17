@@ -10,5 +10,9 @@ describe('TodoModel', function(){
 
   it('should require a task', function(){
     expect(todoModel.isValid()).toBeFalsy();
+
+    todoModel.set('task', 'finish the app');
+
+    expect(todoModel.isValid()).toBeTruthy();
   });
 });

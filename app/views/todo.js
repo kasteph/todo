@@ -1,12 +1,11 @@
 var TodoView = Backbone.View.extend({
   tagName: 'li',
 
-  el: 'body',
-
   className: 'todo',
 
   render: function() {
-    this.$el.html('TodoView')
+    this.$el.html(this.model.get('task'));
+    return this;
   }
 });
 
