@@ -1,7 +1,7 @@
-var Backbone = require('backbone');
-
 var TodoView = Backbone.View.extend({
   tagName: 'li',
+
+  el: 'body',
 
   className: 'todo',
 
