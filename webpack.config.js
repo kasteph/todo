@@ -9,8 +9,10 @@ module.exports = {
   resolve: {
     modulesDirectories: ['node_modules', 'bower_components'],
   },
-  exports: {
-    'jquery': 'jQuery',
+  module: {
+    loaders: [
+      { test: require.resolve("jquery"), loader: "expose?$!expose?jQuery" },
+    ]
   },
   plugins: [
     new webpack.ProvidePlugin({
