@@ -3,8 +3,13 @@ var TodoView = Backbone.View.extend({
 
   className: 'todo',
 
+  initialize: function(options){
+    if (!(options && options.model))
+      throw new Error('No model specified');
+  },
+
   render: function() {
-    this.$el.html(this.model.get('task'));
+    this.el.innerHTML = this.model.get('task');
     return this;
   }
 });
