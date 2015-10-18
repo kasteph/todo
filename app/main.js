@@ -1,3 +1,5 @@
+// require('expose?$!expose?jQuery!jquery');
+
 var TodoModel      = require(__dirname + '/models/todo.js'),
     TodoCollection = require(__dirname + '/collections/todo.js'),
     TodoView       = require(__dirname + '/views/todo.js');
