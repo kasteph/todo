@@ -9,8 +9,14 @@ var TodoView = Backbone.View.extend({
     }
   },
 
+  initialize: function(options){
+    if (!(options && options.model))
+      throw new Error('No model specified');
+  },
+
   events: {
     'click .delete': 'onClickDelete',
+    'click .toggle': 'onClickToggle',
   },
 
   onClickDelete: function() {
@@ -19,14 +25,16 @@ var TodoView = Backbone.View.extend({
     return;
   },
 
-
-  initialize: function(options){
-    if (!(options && options.model))
-      throw new Error('No model specified');
+  onClickToggle: function() {
+    this.model.toggle();
+    if (this.model.get('isCompleted'))
+      this.$el.css('text-decoration', 'line-through');
+    else
+      return
   },
 
   render: function() {
-    this.el.innerHTML = this.model.escape('task') + ' <button class="delete">x</button>';
+    this.el.innerHTML = '<input class="toggle" type="checkbox"></input>' + this.model.escape('task') + ' <button class="delete">x</button>';
     return this;
   }
 });
