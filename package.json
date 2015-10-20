@@ -4,18 +4,21 @@
   "description": "Todo with Webpack and Backbone",
   "main": "bundle.js",
   "dependencies": {
-    "jasmine": "^2.3.2",
-    "jasmine-core": "^2.3.4",
-    "jquery": "^2.1.4",
-    "karma-jasmine": "^0.3.6",
-    "karma-webpack": "^1.7.0",
-    "webpack": "^1.12.2"
+    "backbone": "^1.2.3",
+    "jquery": "^2.1.4"
   },
   "devDependencies": {
     "expose-loader": "^0.7.0",
+    "imports": "^1.0.0",
+    "jasmine": "^2.3.2",
+    "jasmine-core": "^2.3.4",
+    "jasmine-jquery": "^2.1.1",
     "karma": "^0.13.11",
     "karma-chrome-launcher": "^0.2.1",
-    "karma-sourcemap-loader": "^0.3.6"
+    "karma-jasmine": "^0.3.6",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "webpack": "^1.12.2"
   },
   "keywords": [],
   "author": "Steph Samson <sdvsamson@gmail.com>",

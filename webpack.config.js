@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 
+
 module.exports = {
   entry: __dirname + '/app/main.js',
   output: {
@@ -11,13 +12,15 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: require.resolve("jquery"), loader: "expose?$!expose?jQuery" },
+      { test: require.resolve('jquery'), loader: 'expose?$!expose?jQuery' },
     ]
   },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
-      Backbone: 'backbone',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Backbone: 'backbone'
     })
   ],
   amd: {
