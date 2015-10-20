@@ -5,10 +5,7 @@
       TodoCollectionView = require(__dirname + '/views/todocollection.js'),
       TodoCreateView = require(__dirname + '/views/todocreate.js');
 
-  var todoCollection = new TodoCollection([
-    new TodoModel({task: 'finish app'}),
-    new TodoModel({task: 'cook dinner'})
-  ]);
+  var todoCollection = new TodoCollection();
 
   var bus = _.extend({}, Backbone.Events);
   
