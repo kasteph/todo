@@ -8,8 +8,15 @@ var TodoCollectionView = Backbone.View.extend({
   initialize: function(options){
     this.bus = options.bus;
     this.bus.on('addTask', this.onAdd, this);
+    this.model.on('remove', this.onRemove, this);
+
     if (!(options && options.model))
       throw new Error('No model is specified');
+  },
+
+  onRemove: function(view){
+    console.log('onRemove', this, view);
+    this.$('li[id="' + view.cid + '"]').remove();
   },
 
   onAdd: function(todo){
