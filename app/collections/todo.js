@@ -4,4 +4,4 @@ var TodoCollection = Backbone.Collection.extend({
   model: TodoModel
 });
 
-module.export = TodoCollection;
+module.exports = TodoCollection;

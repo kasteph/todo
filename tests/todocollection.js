@@ -5,7 +5,7 @@ describe('TodoCollection', function(){
   var todoCollection;
 
   beforeEach(function(){
-    todoCollection = new TodoCollection([todoModel]);
+    todoCollection = new TodoCollection();
   });
 
 });
