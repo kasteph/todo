@@ -42,7 +42,7 @@ var TodoCreateView = Backbone.View.extend({
 
   render: function(){
     window.view = this;
-    this.el.innerHTML = '<input type="text" id="task" placeholder="Enter task"></input><button id="add">Add</button><div id="error"></div>';
+    this.el.innerHTML = '<input type="text" id="task" autofocus placeholder="Enter task"></input><button id="add">Add</button><div id="error"></div>';
     return this;
   }
 });
