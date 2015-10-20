@@ -1,11 +1,22 @@
-// require('expose?$!expose?jQuery!jquery');
+(function(){
+  var _              = require('../node_modules/backbone/node_modules/underscore');
+      TodoModel      = require(__dirname + '/models/todo.js'),
+      TodoCollection = require(__dirname + '/collections/todo.js'),
+      TodoCollectionView = require(__dirname + '/views/todocollection.js'),
+      TodoCreateView = require(__dirname + '/views/todocreate.js');
 
-var TodoModel      = require(__dirname + '/models/todo.js'),
-    TodoCollection = require(__dirname + '/collections/todo.js'),
-    TodoView       = require(__dirname + '/views/todo.js');
+  var todoCollection = new TodoCollection([
+    new TodoModel({task: 'finish app'}),
+    new TodoModel({task: 'cook dinner'})
+  ]);
 
-var todo = new TodoModel({task: 'finish app'});
-var todoView = new TodoView({model: todo});
+  var bus = _.extend({}, Backbone.Events);
+  
+  var todoCollectionView = new TodoCollectionView({model: todoCollection, bus: bus});
+  var todoCreateView = new TodoCreateView({bus: bus});
+  
+  var container = document.getElementById('container');
 
-var todosEl = document.getElementById('todos');
-todosEl.appendChild(todoView.render().el);
+  container.appendChild(todoCreateView.render().el);
+  container.appendChild(todoCollectionView.render().el);
+})();
